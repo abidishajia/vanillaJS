@@ -1,0 +1,28 @@
+I decided to go with vanilla JavaScript and Bootstrap for this project. 
+
+Our index.html page contains a simple markup for an input field and a button. 
+
+Our app.js file is where the magic happens. 
+
+document.querySelector() - this gets the first element that matches the specified selector.
+We then add an eventListener to the button we got from querySelector(). Event Listener could be
+anything from a click to a mouseover. There are many different kind of eventListeners, but we only
+used the 'click' eventListener. eventListener takes in a callback function which fires when a user clicks on an element.
+
+We use fetch and promises to get data from an external source i.e. website. Fetch allows us to make network requests so we can
+get, post and delete data. In our project, we are only getting the data from the specified urls.
+
+After we fetched the data from both of the urls, we joined both the arrays of object on the userId. We did this by creating
+an empty object first. Then using the forEach loop, we added the users into the object. We achieved this by using userId as the key and the user 
+in users as the value.
+
+Similarly, we then iterated over the posts arrayvand added the value in the object we created depending on the users. 
+We passed the result into our helper function. 
+
+Our helper function is called postsDisplay which checks for a condition, and if it is true it displays some posts. 
+The condition it checks is if the value entered by the user is present in the obj we passed in our helper function. 
+If it is, then it creates new elements using document.createElement(), adds new classes using classList.add, adds some text 
+using textContent and innerHTML, and adds it to the DOM using appendChild.
+
+Our last click button clears the screen by setting innerHTML = ""
+
